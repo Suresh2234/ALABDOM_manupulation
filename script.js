@@ -1,3 +1,12 @@
+/// Menu data structure
+var menuLinks = [
+    { text: "about", href: "/about" },
+    { text: "catalog", href: "/catalog" },
+    { text: "orders", href: "/orders" },
+    { text: "account", href: "/account" },
+];
+
+
 // Part 1:
 const mainEl = document.querySelector('main');
 mainEl.style.backgroundColor = 'var(--main-bg)';
@@ -12,11 +21,14 @@ topMenuEl.classList.add("flex-around");
 
 
 //Part 3:  Menu data structure
-var menuLinks = [
-    { text: 'about', href: '/about' },
-    { text: 'catalog', href: '/catalog' },
-    { text: 'orders', href: '/orders' },
-    { text: 'account', href: '/account' },
-];
 
+const nav = document.querySelector('nav')
+
+for (var i = 0; i < menuLinks.length; i++) {
+    var link = menuLinks[i];
+    var menuItem = document.createElement('a');
+    menuItem.textContent = link.text;
+    menuItem.href = link.href;
+    nav.appendChild(menuItem);
+}
 
